@@ -52,6 +52,7 @@ namespace tarea6A
       cadSql = $"select * from préstamos where rfc = '{cl[0].Rfc}'";
       List<Préstamos> pr = context.Préstamos.SqlQuery(cadSql).ToList();
 
+      cbPrestamo.Items.Clear();
       cbPrestamo.Items.Add(" ");
       foreach (Préstamos p in pr)
         cbPrestamo.Items.Add(p.Folio.ToString());

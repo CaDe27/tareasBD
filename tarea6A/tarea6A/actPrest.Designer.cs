@@ -39,7 +39,6 @@
       this.txMonto = new System.Windows.Forms.TextBox();
       this.lblMonto = new System.Windows.Forms.Label();
       this.btAct = new System.Windows.Forms.Button();
-      this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.dateP = new System.Windows.Forms.DateTimePicker();
       this.btAlt = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.dtgGeneral)).BeginInit();
@@ -152,13 +151,6 @@
       this.btAct.Visible = false;
       this.btAct.Click += new System.EventHandler(this.btAct_Click);
       // 
-      // dateTimePicker1
-      // 
-      this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
-      this.dateTimePicker1.Name = "dateTimePicker1";
-      this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-      this.dateTimePicker1.TabIndex = 14;
-      // 
       // dateP
       // 
       this.dateP.Enabled = false;
@@ -188,7 +180,6 @@
       this.ClientSize = new System.Drawing.Size(979, 523);
       this.Controls.Add(this.btAlt);
       this.Controls.Add(this.dateP);
-      this.Controls.Add(this.dateTimePicker1);
       this.Controls.Add(this.btAct);
       this.Controls.Add(this.lblMonto);
       this.Controls.Add(this.txMonto);
@@ -222,7 +213,6 @@
         private System.Windows.Forms.TextBox txMonto;
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Button btAct;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateP;
         private System.Windows.Forms.Button btAlt;
     }
