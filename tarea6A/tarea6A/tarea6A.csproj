@@ -79,7 +79,6 @@
     <Compile Include="Clientes.cs">
       <DependentUpon>Modelo_Prestamos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Comunes.cs" />
     <Compile Include="Empresas.cs">
       <DependentUpon>Modelo_Prestamos.tt</DependentUpon>
     </Compile>
