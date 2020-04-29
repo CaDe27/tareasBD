@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PréstamosModelStoreContainer" CdmEntityContainer="PréstamosEntities">
+    <EntitySetMapping Name="Avalan">
+      <EntityTypeMapping TypeName="PréstamosModel.Avalan">
+        <MappingFragment StoreEntitySet="Avalan">
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="IdAval" ColumnName="IdAval" />
+          <ScalarProperty Name="MontoAvalado" ColumnName="MontoAvalado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avales">
+      <EntityTypeMapping TypeName="PréstamosModel.Avales">
+        <MappingFragment StoreEntitySet="Avales">
+          <ScalarProperty Name="IdAval" ColumnName="IdAval" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+          <ScalarProperty Name="NoEscritura" ColumnName="NoEscritura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="PréstamosModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Rfc" ColumnName="Rfc" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="PréstamosModel.Empresas">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="IdEmp" ColumnName="IdEmp" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagos">
+      <EntityTypeMapping TypeName="PréstamosModel.Pagos">
+        <MappingFragment StoreEntitySet="Pagos">
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="IdP" ColumnName="IdP" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="MontoPago" ColumnName="MontoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Préstamos">
+      <EntityTypeMapping TypeName="PréstamosModel.Préstamos">
+        <MappingFragment StoreEntitySet="Préstamos">
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+          <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+          <ScalarProperty Name="Mensualidad" ColumnName="Mensualidad" />
+          <ScalarProperty Name="PagoTotal" ColumnName="PagoTotal" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PréstamosModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trabajan">
+      <EntityTypeMapping TypeName="PréstamosModel.Trabajan">
+        <MappingFragment StoreEntitySet="Trabajan">
+          <ScalarProperty Name="Rfc" ColumnName="Rfc" />
+          <ScalarProperty Name="IdEmp" ColumnName="IdEmp" />
+          <ScalarProperty Name="FechaIni" ColumnName="FechaIni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PréstamosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Avalan">
+    <Key>
+      <PropertyRef Name="Folio" />
+      <PropertyRef Name="IdAval" />
+    </Key>
+    <Property Name="Folio" Type="Int32" Nullable="false" />
+    <Property Name="IdAval" Type="Int32" Nullable="false" />
+    <Property Name="MontoAvalado" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Préstamos" Relationship="Self.FK__Avalan__Folio__1FCDBCEB" FromRole="Avalan" ToRole="Préstamos" />
+    <NavigationProperty Name="Avales" Relationship="Self.FK__Avalan__IdAval__20C1E124" FromRole="Avalan" ToRole="Avales" />
+  </EntityType>
+  <EntityType Name="Avales">
+    <Key>
+      <PropertyRef Name="IdAval" />
+    </Key>
+    <Property Name="IdAval" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Domicilio" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Teléfono" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="NoEscritura" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Avalan" Relationship="Self.FK__Avalan__IdAval__20C1E124" FromRole="Avales" ToRole="Avalan" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="Rfc" />
+    </Key>
+    <Property Name="Rfc" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Contraseña" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Domicilio" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Teléfono" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Préstamos" Relationship="Self.FK__Préstamos__RFC__1273C1CD" FromRole="Clientes" ToRole="Préstamos" />
+    <NavigationProperty Name="Trabajan" Relationship="Self.FK__Trabajan__Rfc__1A14E395" FromRole="Clientes" ToRole="Trabajan" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="IdEmp" />
+    </Key>
+    <Property Name="IdEmp" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Domicilio" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Teléfono" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Trabajan" Relationship="Self.FK__Trabajan__IdEmp__1B0907CE" FromRole="Empresas" ToRole="Trabajan" />
+  </EntityType>
+  <EntityType Name="Pagos">
+    <Key>
+      <PropertyRef Name="Folio" />
+      <PropertyRef Name="IdP" />
+    </Key>
+    <Property Name="Folio" Type="Int32" Nullable="false" />
+    <Property Name="IdP" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="MontoPago" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Préstamos" Relationship="Self.FK__Pagos__Folio__15502E78" FromRole="Pagos" ToRole="Préstamos" />
+  </EntityType>
+  <EntityType Name="Préstamos">
+    <Key>
+      <PropertyRef Name="Folio" />
+    </Key>
+    <Property Name="Folio" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Monto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Tasa" Type="Single" />
+    <Property Name="Plazo" Type="Int32" />
+    <Property Name="Mensualidad" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PagoTotal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Saldo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RFC" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Avalan" Relationship="Self.FK__Avalan__Folio__1FCDBCEB" FromRole="Préstamos" ToRole="Avalan" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK__Préstamos__RFC__1273C1CD" FromRole="Préstamos" ToRole="Clientes" />
+    <NavigationProperty Name="Pagos" Relationship="Self.FK__Pagos__Folio__15502E78" FromRole="Préstamos" ToRole="Pagos" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Trabajan">
+    <Key>
+      <PropertyRef Name="Rfc" />
+      <PropertyRef Name="IdEmp" />
+    </Key>
+    <Property Name="Rfc" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IdEmp" Type="Int32" Nullable="false" />
+    <Property Name="FechaIni" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK__Trabajan__Rfc__1A14E395" FromRole="Trabajan" ToRole="Clientes" />
+    <NavigationProperty Name="Empresas" Relationship="Self.FK__Trabajan__IdEmp__1B0907CE" FromRole="Trabajan" ToRole="Empresas" />
+  </EntityType>
+  <Association Name="FK__Avalan__Folio__1FCDBCEB">
+    <End Role="Préstamos" Type="Self.Préstamos" Multiplicity="1" />
+    <End Role="Avalan" Type="Self.Avalan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Préstamos">
+        <PropertyRef Name="Folio" />
+      </Principal>
+      <Dependent Role="Avalan">
+        <PropertyRef Name="Folio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Avalan__IdAval__20C1E124">
+    <End Role="Avales" Type="Self.Avales" Multiplicity="1" />
+    <End Role="Avalan" Type="Self.Avalan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avales">
+        <PropertyRef Name="IdAval" />
+      </Principal>
+      <Dependent Role="Avalan">
+        <PropertyRef Name="IdAval" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Préstamos__RFC__1273C1CD">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="Préstamos" Type="Self.Préstamos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Rfc" />
+      </Principal>
+      <Dependent Role="Préstamos">
+        <PropertyRef Name="RFC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trabajan__Rfc__1A14E395">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="Trabajan" Type="Self.Trabajan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Rfc" />
+      </Principal>
+      <Dependent Role="Trabajan">
+        <PropertyRef Name="Rfc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trabajan__IdEmp__1B0907CE">
+    <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
+    <End Role="Trabajan" Type="Self.Trabajan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="IdEmp" />
+      </Principal>
+      <Dependent Role="Trabajan">
+        <PropertyRef Name="IdEmp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pagos__Folio__15502E78">
+    <End Role="Préstamos" Type="Self.Préstamos" Multiplicity="1" />
+    <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Préstamos">
+        <PropertyRef Name="Folio" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="Folio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PréstamosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Avalan" EntityType="Self.Avalan" />
+    <EntitySet Name="Avales" EntityType="Self.Avales" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresas" />
+    <EntitySet Name="Pagos" EntityType="Self.Pagos" />
+    <EntitySet Name="Préstamos" EntityType="Self.Préstamos" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Trabajan" EntityType="Self.Trabajan" />
+    <AssociationSet Name="FK__Avalan__Folio__1FCDBCEB" Association="Self.FK__Avalan__Folio__1FCDBCEB">
+      <End Role="Préstamos" EntitySet="Préstamos" />
+      <End Role="Avalan" EntitySet="Avalan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Avalan__IdAval__20C1E124" Association="Self.FK__Avalan__IdAval__20C1E124">
+      <End Role="Avales" EntitySet="Avales" />
+      <End Role="Avalan" EntitySet="Avalan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Préstamos__RFC__1273C1CD" Association="Self.FK__Préstamos__RFC__1273C1CD">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Préstamos" EntitySet="Préstamos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trabajan__Rfc__1A14E395" Association="Self.FK__Trabajan__Rfc__1A14E395">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Trabajan" EntitySet="Trabajan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trabajan__IdEmp__1B0907CE" Association="Self.FK__Trabajan__IdEmp__1B0907CE">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Trabajan" EntitySet="Trabajan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pagos__Folio__15502E78" Association="Self.FK__Pagos__Folio__15502E78">
+      <End Role="Préstamos" EntitySet="Préstamos" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
