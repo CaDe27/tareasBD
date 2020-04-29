@@ -20,5 +20,18 @@ namespace tarea6A
         public Nullable<decimal> MontoPago { get; set; }
     
         public virtual Préstamos Préstamos { get; set; }
+
+    public Pagos(int folio, int idP, DateTime fecha, decimal montoPago)
+    {
+      Folio = folio;
+      IdP = idP;
+      Fecha = fecha;
+      MontoPago = montoPago;
     }
+
+    public Pagos()
+    {
+      this.Préstamos = null;
+    }
+  }
 }

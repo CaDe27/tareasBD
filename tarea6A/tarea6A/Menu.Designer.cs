@@ -79,6 +79,7 @@
       this.menuVer.Name = "menuVer";
       this.menuVer.Size = new System.Drawing.Size(237, 26);
       this.menuVer.Text = "Ver tus préstamos";
+      this.menuVer.Click += new System.EventHandler(this.menuVer_Click);
       // 
       // Menu
       // 

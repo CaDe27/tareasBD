@@ -46,6 +46,7 @@
       this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.btActualiza = new System.Windows.Forms.Button();
+      this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
       ((System.ComponentModel.ISupportInitialize)(this.dtgGeneral)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
       this.bindingNavigator.SuspendLayout();
@@ -87,7 +88,7 @@
       // 
       // bindingNavigator
       // 
-      this.bindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+      this.bindingNavigator.AddNewItem = this.bindingNavigatorMoveNextItem;
       this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
       this.bindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
       this.bindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -102,7 +103,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripButton1});
       this.bindingNavigator.Location = new System.Drawing.Point(0, 0);
       this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
       this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -122,6 +124,7 @@
       this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
       this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
       this.bindingNavigatorAddNewItem.Text = "Add new";
+      this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
       // 
       // bindingNavigatorCountItem
       // 
@@ -209,6 +212,15 @@
       this.btActualiza.UseVisualStyleBackColor = true;
       this.btActualiza.Click += new System.EventHandler(this.btAlta_Click);
       // 
+      // toolStripButton1
+      // 
+      this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+      this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+      this.toolStripButton1.Name = "toolStripButton1";
+      this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
+      this.toolStripButton1.Text = "toolStripButton1";
+      // 
       // actualizaTablas
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button btActualiza;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

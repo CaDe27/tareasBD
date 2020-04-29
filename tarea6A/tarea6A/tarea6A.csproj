@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actPrest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="actPrest.Designer.cs">
+      <DependentUpon>actPrest.cs</DependentUpon>
+    </Compile>
     <Compile Include="actualizaTablas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,15 @@
     <Compile Include="Trabajan.cs">
       <DependentUpon>Modelo_Prestamos.tt</DependentUpon>
     </Compile>
+    <Compile Include="verCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="verCliente.Designer.cs">
+      <DependentUpon>verCliente.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="actPrest.resx">
+      <DependentUpon>actPrest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="actualizaTablas.resx">
       <DependentUpon>actualizaTablas.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +151,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="verCliente.resx">
+      <DependentUpon>verCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Modelo_Prestamos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Modelo_Prestamos.Designer.cs</LastGenOutput>

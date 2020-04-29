@@ -15,7 +15,7 @@ namespace tarea6A
   {
     //Variables de clase
     PréstamosEntities context = new PréstamosEntities();
-    BindingSource AvalanBS = new BindingSource();
+    BindingSource AvalesBS = new BindingSource();
     BindingSource ClientesBS = new BindingSource();
     BindingSource EmpresasBS = new BindingSource();
 
@@ -26,7 +26,7 @@ namespace tarea6A
 
         private void actualizaTablas_Load(object sender, EventArgs e)
         {
-      context.Avalan.Load();
+      context.Avales.Load();
       context.Clientes.Load();
       context.Empresas.Load();
 
@@ -36,11 +36,11 @@ namespace tarea6A
 
     private void cbTablas_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if (cbTablas.Text == "Avalan")
+      if (cbTablas.Text == "Avales")
       {
-        AvalanBS.DataSource = context.Avalan.Local;
-        dtgGeneral.DataSource = AvalanBS;
-        bindingNavigator.BindingSource = AvalanBS;
+        AvalesBS.DataSource = context.Avales.Local;
+        dtgGeneral.DataSource = AvalesBS;
+        bindingNavigator.BindingSource = AvalesBS;
 
       }
       else if (cbTablas.Text == "Clientes")
@@ -79,6 +79,11 @@ namespace tarea6A
     private void dtgGeneral_DataError(object sender, DataGridViewDataErrorEventArgs e)
     {
       MessageBox.Show("Hay un error en los datos que ingresaste. Asegúrate que sean del tipo correcto.");
+    }
+
+    private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+    {
+
     }
   }
 }

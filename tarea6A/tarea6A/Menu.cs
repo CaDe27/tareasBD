@@ -14,7 +14,7 @@ namespace tarea6A
   {
     //Variables de clase
     PréstamosEntities context = new PréstamosEntities();
-
+    string rfc;
     public Menu()
     {
       InitializeComponent();
@@ -24,6 +24,7 @@ namespace tarea6A
     {
       InitializeComponent();
       this.context = context;
+      this.rfc = rfc;
       if(rfc == "ger")
       {
         menuActTablas.Enabled = true;
@@ -51,7 +52,15 @@ namespace tarea6A
 
     private void menuActPrest_Click(object sender, EventArgs e)
     {
-     
+      actPrest a = new actPrest();
+      a.ShowDialog();
+    }
+
+    private void menuVer_Click(object sender, EventArgs e)
+    {
+      verCliente a = new verCliente(rfc);
+      a.ShowDialog();
+
     }
   }
 }

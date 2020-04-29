@@ -36,5 +36,10 @@ namespace tarea6A
         public virtual Clientes Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pagos> Pagos { get; set; }
+
+    public static implicit operator Préstamos(HashSet<Préstamos> v)
+    {
+      throw new NotImplementedException();
     }
+  }
 }

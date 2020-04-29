@@ -17,3 +17,5 @@ C:\BD\tareasBD\tarea6A\tarea6A\obj\Debug\tarea6A.exe
 C:\BD\tareasBD\tarea6A\tarea6A\obj\Debug\tarea6A.pdb
 C:\BD\tareasBD\tarea6A\tarea6A\obj\Debug\tarea6A.actualizaTablas.resources
 C:\BD\tareasBD\tarea6A\tarea6A\obj\Debug\tarea6A.Menu.resources
+C:\BD\tareasBD\tarea6A\tarea6A\obj\Debug\tarea6A.verCliente.resources
+C:\BD\tareasBD\tarea6A\tarea6A\obj\Debug\tarea6A.actPrest.resources
